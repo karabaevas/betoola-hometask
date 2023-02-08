@@ -1,0 +1,49 @@
+openapi: 3.1.0
+info:
+  title: Betoola Homework API
+  version: 1.0.0
+servers:
+  - url: http:localhost:8080
+paths:
+  /rest:
+    post:
+      tags:
+        - exchange
+      summary: exchange method
+      operationId: exchange
+      parameters:
+        - name: CCY1
+          in: query
+          description: exhange
+          required: true
+          schema:
+            type: string
+        - name: CCY2
+          in: query
+          description: exhange
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: exchanged
+        400:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDTO'
+components:
+  schemas:
+    ErrorDTO:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        message:
+          type: string
+        code:
+          type:
+            integer
+            format32
