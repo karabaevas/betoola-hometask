@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "app.margin.percents",
+      "type": "java.lang.String",
+      "description": "Fee for exchange"
+    }
+  ]
+}

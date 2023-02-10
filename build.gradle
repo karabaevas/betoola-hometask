@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.8'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'org.openapi.generator' version '6.3.0'
+}
+
+group = 'com.betoola'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-test'
+    implementation 'org.liquibase:liquibase-core'
+    implementation 'io.springfox:springfox-swagger2:3.0.0'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
+    implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.14'
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.0'
+
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+compileJava.dependsOn "openApiGenerate"
+
+openApiGenerate {
+    generatorName = "spring"
+    inputSpec = "$rootDir/src/main/resources/openapi/api.yaml"
+    outputDir = "$buildDir/generated"
+    packageName = "com.betoola.homework"
+    apiPackage = "com.betoola.homework.api"
+    modelPackage = "com.betoola.homework.model"
+    configOptions = [
+            interfaceOnly: "true",
+            useTags: "true",
+            skipDefaultInterface: "true",
+            dateLibrary: "java8",
+            unhandledException: "true",
+            sourceFolder: ""
+    ]
+}
+sourceSets {
+    main {
+        java {
+            srcDir "$buildDir/generated"
+        }
+    }
+}
