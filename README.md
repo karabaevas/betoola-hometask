@@ -1,7 +1,7 @@
 ### Documentation
 
 ### Getting Started
-
+Install jdk 17
 ```
 git clone https://github.com/karabaevas/betoola-hometask.git
 cd betoola-hometask
