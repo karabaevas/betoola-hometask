@@ -17,7 +17,7 @@ For Windows
 ```
 Run App
 ```
-./gradlew booRun
+./gradlew bootRun
 ```
 API description:
 ```
