@@ -13,7 +13,7 @@ For Linux:
 ```
 For Windows
 ```
-gradlew.bat build
+./gradlew.bat build
 ```
 Run App
 ```
@@ -32,8 +32,8 @@ Download contract file:
 http://localhost:8080/v3/api-docs.yaml
 ```
 ### DB:
-URL: jdbc:h2:mem:testdb
-USER: SA
+- URL: jdbc:h2:mem:testdb
+- USER: SA
 UI
 ```
 http://localhost:8080/h2-console
