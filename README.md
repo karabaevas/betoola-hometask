@@ -1,7 +1,7 @@
 ### Documentation
 
 ### Getting Started
-
+Install jdk 17
 ```
 git clone https://github.com/karabaevas/betoola-hometask.git
 cd betoola-hometask
@@ -18,13 +18,13 @@ For Linux:
 For Windows
 
 ```
-gradlew.bat build
+./gradlew.bat build
 ```
 
 Run App
 
 ```
-./gradlew booRun
+./gradlew bootRun
 ```
 
 API description:
@@ -47,8 +47,8 @@ http://localhost:8080/v3/api-docs.yaml
 
 ### DB:
 
-URL: jdbc:h2:mem:testdb
-USER: SA
+- URL: jdbc:h2:mem:testdb
+- USER: SA
 UI
 
 ```
