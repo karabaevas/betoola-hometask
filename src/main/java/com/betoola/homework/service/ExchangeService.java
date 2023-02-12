@@ -15,10 +15,9 @@ import java.math.RoundingMode;
 
 @Service
 public class ExchangeService {
-    private static Logger logger = LoggerFactory.getLogger(ExchangeService.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExchangeService.class);
     private BigDecimal margin;
-    @Autowired
-    private RateRepository rateRepository;
+    private final RateRepository rateRepository;
 
     public ExchangeService(RateRepository rateRepository) {
         this.rateRepository = rateRepository;
