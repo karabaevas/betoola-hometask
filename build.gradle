@@ -44,12 +44,12 @@ openApiGenerate {
     apiPackage = "com.betoola.homework.api"
     modelPackage = "com.betoola.homework.model"
     configOptions = [
-            interfaceOnly: "true",
-            useTags: "true",
+            interfaceOnly       : "true",
+            useTags             : "true",
             skipDefaultInterface: "true",
-            dateLibrary: "java8",
-            unhandledException: "true",
-            sourceFolder: ""
+            dateLibrary         : "java8",
+            unhandledException  : "true",
+            sourceFolder        : ""
     ]
 }
 sourceSets {

@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 public class ExchangeController implements ExchangeApi {
     private final ExchangeService exchangeService;
     private final Validator validator;
+
     public ExchangeController(ExchangeService exchangeService, Validator validator) {
         this.exchangeService = exchangeService;
         this.validator = validator;

@@ -8,12 +8,12 @@ import java.math.BigDecimal;
 
 @Component
 public class Validator {
-    public void validate(CurrencyCode currencyCode1, CurrencyCode currencyCode2, BigDecimal amount){
-        if (amount.intValue()<=0){
+    public void validate(CurrencyCode source, CurrencyCode target, BigDecimal amount) {
+        if (amount.doubleValue() <= 0) {
             throw new ValidationException("Amount must be more than zero!");
         }
-        if (currencyCode1.equals(currencyCode2)){
-            throw new ValidationException("Same currency passed twice!");
+        if (source.equals(target)) {
+            throw new ValidationException("You are trying to convert to the same currency");
         }
     };
 }
