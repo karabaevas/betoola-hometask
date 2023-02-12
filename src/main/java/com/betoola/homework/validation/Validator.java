@@ -15,5 +15,7 @@ public class Validator {
         if (source.equals(target)) {
             throw new ValidationException("You are trying to convert to the same currency");
         }
-    };
+    }
+
+    ;
 }

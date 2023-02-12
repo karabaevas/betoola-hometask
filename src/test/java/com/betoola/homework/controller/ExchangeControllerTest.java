@@ -53,6 +53,17 @@ class ExchangeControllerTest {
     }
 
     @Test
+    public void convertNegativeValue() throws Exception {
+        mockMvc
+                .perform(post("/rest/exchange")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("currencyForSale", "EUR")
+                        .param("amountForSale", "-1000")
+                        .param("targetCurrency", "GBP"))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
     public void sameCurrencyTest() throws Exception {
         mockMvc
                 .perform(post("/rest/exchange")

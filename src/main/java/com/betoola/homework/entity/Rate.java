@@ -1,6 +1,9 @@
 package com.betoola.homework.entity;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,6 +12,8 @@ import java.math.BigDecimal;
 
 @Entity(name = "Rate")
 @IdClass(RateId.class)
+@Getter
+@Setter
 public class Rate {
     @Id
     @Column(name = "FROM_CCY")
@@ -20,15 +25,4 @@ public class Rate {
 
     private BigDecimal rate;
 
-    public String getFromCurrency() {
-        return fromCurrency;
-    }
-
-    public String getToCurrency() {
-        return toCurrency;
-    }
-
-    public BigDecimal getRate() {
-        return rate;
-    }
 }

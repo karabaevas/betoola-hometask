@@ -1,7 +1,9 @@
 ### Documentation
 
 ### Getting Started
+
 Install jdk 17
+
 ```
 git clone https://github.com/karabaevas/betoola-hometask.git
 cd betoola-hometask
@@ -49,7 +51,7 @@ http://localhost:8080/v3/api-docs.yaml
 
 - URL: jdbc:h2:mem:testdb
 - USER: SA
-UI
+  UI
 
 ```
 http://localhost:8080/h2-console
